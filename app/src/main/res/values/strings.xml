@@ -8,13 +8,11 @@
     <string name="title_activity_swerve_tabbed">SwerveTabbedActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
-
-
     <!-- Tabbed Activity Strings -->
     <string name="feedButtonText">Feed</string>
     <string name="postButtonText">Post</string>
     <string name="mySwerveButtonText">Swerves</string>
     <string name="accountButtonText">Account</string>
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
