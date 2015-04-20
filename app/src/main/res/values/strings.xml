@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Swerve</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_swerve_tabbed">SwerveTabbedActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+
+
+    <!-- Tabbed Activity Strings -->
+    <string name="feedButtonText">Feed</string>
+    <string name="postButtonText">Post</string>
+    <string name="mySwerveButtonText">Swerves</string>
+    <string name="accountButtonText">Account</string>
+
+
+</resources>
