@@ -21,8 +21,10 @@
         <item name="android:borderlessButtonStyle">@color/background_material_light</item>
         <item name="android:padding">5dp</item>
         <item name="android:selectable">true</item>
+        <item name="android:drawable">@color/background_material_dark</item>
         <item name="android:state_selected">false</item>
         <item name="android:unselectedAlpha">125</item>
+
     </style>
 
 </resources>

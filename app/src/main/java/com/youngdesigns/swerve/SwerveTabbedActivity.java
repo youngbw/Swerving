@@ -52,12 +52,22 @@ public class SwerveTabbedActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void feedClicked(View view) {
-        Fragment frag = manager.findFragmentById(R.id.fragment_container);
-        if (!(frag instanceof FeedFragment)) {
-            FeedFragment fragment = new FeedFragment();
-            manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+    public void buttonClicked(View view) {
+        Fragment fragment = null;
+        if (view.getId() == R.id.feed_button) {
+
+            fragment = new FeedFragment();
+
+
+        } else if (view.getId() == R.id.post_button) {
+
+            fragment = new PostFragment();
+
         }
 
+
+        if (fragment != null) {
+            manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+        }
     }
 }

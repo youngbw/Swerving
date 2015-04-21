@@ -6,8 +6,24 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     style="@style/altAppTheme"
-    android:gravity="center"
+    android:gravity="center|top"
     tools:context="com.youngdesigns.swerve.LoginActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Email"
+        android:textColorHint="#000000"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Password"
+        android:textColorHint="#000000"
+        android:textSize="30sp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -15,7 +31,7 @@
         android:background="#FFFFFF"
         android:text="Login"
         android:onClick="loginClicked"
-
+        android:layout_margin="10dp"
         />
 
 </LinearLayout>

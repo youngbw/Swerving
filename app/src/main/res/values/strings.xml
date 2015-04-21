@@ -15,4 +15,11 @@
     <string name="accountButtonText">Account</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <!-- Feed fragment strings -->
+    <string name="group_button_text">Group</string>
+    <string name="friends_button_text">Friends</string>
+    <string name="location_button_text">Location</string>
+    <string name="public_button_text">Public</string>
+
 </resources>

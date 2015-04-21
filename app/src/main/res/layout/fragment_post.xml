@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.PostFragment"
+    android:orientation="vertical" android:weightSum="1.0" style="@style/mainAppTheme"
+    android:gravity="center">
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/mainAppTheme"
+        android:layout_weight=".9"
+        android:id="@+id/nested_post_fragment_container"></FrameLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight=".1"
+        android:weightSum="1.0">
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1.0"
+            android:layout_weight=".9"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Picture"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text"/>
+
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            style="@style/tabbedButtonTheme"
+            android:text="Next"/>
+
+    </LinearLayout>
+
+</LinearLayout>

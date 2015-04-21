@@ -2,14 +2,63 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.FeedFragment"
     android:orientation="vertical" style="@style/mainAppTheme"
-    android:gravity="center">
+    android:gravity="center" android:weightSum="1.0">
 
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:id="@+id/nested_Feed_Fragment_container"
+        android:layout_weight=".9"
+        style="@style/mainAppTheme">
+        </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:gravity="bottom"
+        style="@style/altAppTheme"
+        android:weightSum="1.0">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:weightSum="1.0"
+            android:layout_weight=".1"
+            android:orientation="horizontal">
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight=".25"
+                android:id="@+id/publicButton"
+                style="@style/tabbedButtonTheme" android:text="@string/public_button_text"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight=".25"
+                android:id="@+id/locationButton"
+                style="@style/tabbedButtonTheme" android:text="@string/location_button_text"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight=".25"
+                android:id="@+id/friendsButton"
+                style="@style/tabbedButtonTheme" android:text="@string/friends_button_text"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight=".25"
+                android:id="@+id/groupButton"
+                style="@style/tabbedButtonTheme" android:text="@string/group_button_text"/>
+
+
+
+        </RadioGroup>
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
