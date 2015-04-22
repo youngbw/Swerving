@@ -15,7 +15,8 @@
         android:layout_margin="10dp"
         android:hint="Email"
         android:textColorHint="#000000"
-        android:textSize="30sp"/>
+        android:textSize="20sp"
+        style="@style/textWidgetTheme"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -23,7 +24,8 @@
         android:layout_margin="10dp"
         android:hint="Password"
         android:textColorHint="#000000"
-        android:textSize="30sp"/>
+        android:textSize="20sp"
+        style="@style/textWidgetTheme"/>
 
     <Button
         android:layout_width="match_parent"

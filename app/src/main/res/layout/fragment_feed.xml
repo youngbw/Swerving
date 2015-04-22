@@ -4,12 +4,33 @@
     android:orientation="vertical" style="@style/mainAppTheme"
     android:gravity="center" android:weightSum="1.0">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/selectorWidgetLayout"
+        android:layout_weight=".1">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedSpinner"
+            android:visibility="gone"></Spinner>
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedSearchView"
+            android:visibility="gone"></SearchView>
+
+    </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/nested_Feed_Fragment_container"
-        android:layout_weight=".9"
+        android:layout_weight=".8"
         style="@style/mainAppTheme">
         </FrameLayout>
 
@@ -24,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:weightSum="1.0"
             android:layout_weight=".1"
+            android:id="@+id/feedRadioGroup"
             android:orientation="horizontal">
 
 

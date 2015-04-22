@@ -27,6 +27,7 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/postRadioGroup"
             android:weightSum="1.0"
             android:layout_weight=".9"
             android:orientation="horizontal">
@@ -34,10 +35,14 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/pictureRadioButton"
+                android:checked="true"
                 android:text="Picture"/>
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/textRadioButton"
                 android:text="Text"/>
 
 
@@ -48,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight=".1"
             style="@style/tabbedButtonTheme"
+            android:layout_margin="2dp"
             android:text="Next"/>
 
     </LinearLayout>

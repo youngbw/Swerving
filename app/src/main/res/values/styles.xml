@@ -12,12 +12,12 @@
 
 
     <style name="altAppTheme">
-        <item name="android:background">#00FF00</item>
+        <item name="android:background">#91FFDA</item>
     </style>
 
     <style name="tabbedButtonTheme">
 
-        <item name="android:background">#FFFFFF</item>
+        <item name="android:background">@drawable/text_backing</item>
         <item name="android:borderlessButtonStyle">@color/background_material_light</item>
         <item name="android:padding">5dp</item>
         <item name="android:selectable">true</item>
@@ -25,6 +25,12 @@
         <item name="android:state_selected">false</item>
         <item name="android:unselectedAlpha">125</item>
 
+    </style>
+
+    <style name="textWidgetTheme">
+
+        <item name="android:background">@drawable/text_backing</item>
+        <item name="android:padding">5dp</item>
     </style>
 
 </resources>

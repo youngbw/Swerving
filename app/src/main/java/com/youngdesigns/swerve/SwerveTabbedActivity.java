@@ -8,16 +8,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import model.SwerveLab;
+
 
 public class SwerveTabbedActivity extends ActionBarActivity {
 
 
-    FragmentManager manager;
+    private FragmentManager manager;
+    private FeedFragment mFeedFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swerve_tabbed);
+        mFeedFragment = null;
         manager = getFragmentManager();
 
         Fragment fragment = manager.findFragmentById(R.id.fragment_container);
@@ -56,8 +61,8 @@ public class SwerveTabbedActivity extends ActionBarActivity {
         Fragment fragment = null;
         if (view.getId() == R.id.feed_button) {
 
-            fragment = new FeedFragment();
-
+            if (mFeedFragment == null) fragment = FeedFragment.newInstance();
+            else fragment = mFeedFragment;
 
         } else if (view.getId() == R.id.post_button) {
 
@@ -65,9 +70,8 @@ public class SwerveTabbedActivity extends ActionBarActivity {
 
         }
 
-
         if (fragment != null) {
-            manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+            manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
         }
     }
 }

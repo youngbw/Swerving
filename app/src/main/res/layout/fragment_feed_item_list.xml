@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.FeedFragment"
-    style="@style/AppTheme">
+    style="@style/mainAppTheme" android:orientation="vertical" android:weightSum="1.0">
 
-    <ListView android:id="@android:id/list" android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
-    <TextView android:id="@android:id/empty" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:gravity="center" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listPictureView"
+        android:layout_weight=".7"
+        android:visibility="invisible"/>
 
-</FrameLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listProgressBar"
+        android:layout_weight=".05" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listTextView"
+        android:layout_weight=".2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight=".05"
+        android:weightSum="1.0">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/listCommentButton"
+            android:layout_weight=".2"
+            android:text="Comments"
+            style="@style/tabbedButtonTheme"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/listTextDateView"
+            android:text="March 30, 2015"
+            android:layout_weight=".8"
+            android:paddingRight="20dp"
+            android:gravity="right|center_vertical"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
