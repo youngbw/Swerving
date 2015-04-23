@@ -1,5 +1,6 @@
 package com.youngdesigns.swerve;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -12,6 +13,18 @@ public class FriendsViewActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends_view);
+
+        setTitle(R.string.friends_button_text);
+
+
+        if (savedInstanceState == null) {
+            Fragment fragment = getFragmentManager().findFragmentById(R.id.friendsFragmentContainer);
+
+            if (fragment == null) {
+                fragment = FriendsListFragment.newInstance();
+            }
+            getFragmentManager().beginTransaction().replace(R.id.friendsFragmentContainer, fragment).commit();
+        }
     }
 
 
@@ -36,4 +49,6 @@ public class FriendsViewActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

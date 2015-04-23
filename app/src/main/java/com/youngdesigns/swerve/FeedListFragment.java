@@ -39,7 +39,7 @@ public class FeedListFragment extends android.app.ListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle(R.string.title_activity_swerve_tabbed);
+        getActivity().setTitle(R.string.app_name);
         mSwerves = SwerveLab.getInstance(getActivity()).getSwerves();
 
         adapter = new SwerveAdapter(mSwerves);

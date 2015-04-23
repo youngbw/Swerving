@@ -31,8 +31,8 @@ public class SwerveTabbedActivity extends ActionBarActivity {
 
             if (fragment == null) {
                 fragment = FeedFragment.newInstance();
-                manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
             }
+            manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }
 
     }

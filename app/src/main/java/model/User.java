@@ -13,16 +13,17 @@ public class User {
 
 
     private UUID userID;
-
     private ArrayList<UUID> groups;
-
     private ArrayList<UUID> friends;
+    private String name;
+
 
     public User() {
 
         userID = UUID.randomUUID();
         groups = new ArrayList<>();
         friends = new ArrayList<>();
+        name = "";
     }
 
     public UUID getUserID() {
@@ -49,4 +50,14 @@ public class User {
         friends.remove(friendID);
     }
 
+    public String getName() {
+        if (name.equals("")) {
+            return "" + getUserID();
+        }
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
