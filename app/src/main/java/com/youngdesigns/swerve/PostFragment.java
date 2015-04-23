@@ -1,8 +1,8 @@
 package com.youngdesigns.swerve;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +19,13 @@ public class PostFragment extends Fragment {
 
     public PostFragment() {
         // Required empty public constructor
+    }
+
+    public static PostFragment newInstance() {
+        PostFragment frag = new PostFragment();
+        Bundle args = new Bundle();
+        frag.setArguments(args);
+        return frag;
     }
 
 
@@ -58,6 +65,7 @@ public class PostFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.nested_post_fragment_container, frag);
             }
         });
+
 
 
 

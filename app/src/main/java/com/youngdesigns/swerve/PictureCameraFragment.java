@@ -2,11 +2,9 @@ package com.youngdesigns.swerve;
 
 
 import android.annotation.TargetApi;
-import android.graphics.Camera;
-import android.hardware.camera2.CameraDevice;
-import android.os.Build;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.graphics.Camera;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.SurfaceView;
 import android.view.View;

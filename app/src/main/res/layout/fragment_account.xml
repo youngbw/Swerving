@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.AccountFragment"
+    style="@style/mainAppTheme" android:paddingTop="10dp" android:padding="5dp"
+    android:orientation="vertical" android:weightSum="1.0">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/accountFriendsButton"
+        style="@style/accountButtonTheme"
+        android:text="@string/friends_button_text"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/accountGroupsButton"
+        android:text="@string/group_button_text"
+        style="@style/accountButtonTheme"/>
+
+
+    <!-- perhaps put this button in the action bar menu? -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoutButton"
+        android:text="@string/logoutText"
+        style="@style/accountButtonTheme" />
+
+</LinearLayout>

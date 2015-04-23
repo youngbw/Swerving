@@ -31,10 +31,21 @@
 
     </style>
 
+    <style name="accountButtonTheme" parent="tabbedButtonTheme">
+
+        <item name="android:layout_marginBottom">5dp</item>
+
+    </style>
+
     <style name="textWidgetTheme">
 
         <item name="android:background">@drawable/text_backing</item>
         <item name="android:padding">5dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+
     </style>
 
 </resources>

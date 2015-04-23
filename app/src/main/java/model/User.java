@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -13,12 +14,15 @@ public class User {
 
     private UUID userID;
 
+    private ArrayList<UUID> groups;
 
+    private ArrayList<UUID> friends;
 
     public User() {
 
         userID = UUID.randomUUID();
-
+        groups = new ArrayList<>();
+        friends = new ArrayList<>();
     }
 
     public UUID getUserID() {
@@ -28,4 +32,21 @@ public class User {
     public void setUserID(UUID userID) {
         this.userID = userID;
     }
+
+    public void addGroup(UUID groupID) {
+        groups.add(groupID);
+    }
+
+    public void removeGroup(UUID groupID) {
+        groups.remove(groupID);
+    }
+
+    public void addFriend(UUID friendID) {
+        friends.add(friendID);
+    }
+
+    public void removeFriend(UUID friendID) {
+        friends.remove(friendID);
+    }
+
 }

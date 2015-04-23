@@ -8,6 +8,11 @@
     <string name="title_activity_swerve_tabbed">SwerveTabbedActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
+    <!-- Login Activity strings -->
+    <string name="loginButtonText">Login</string>
+    <string name="registerButtonText">Create Account</string>
+    <string name="forgotPWtext">Forgot Password</string>
+
     <!-- Tabbed Activity Strings -->
     <string name="feedButtonText">Feed</string>
     <string name="postButtonText">Post</string>
@@ -15,15 +20,18 @@
     <string name="accountButtonText">Account</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
     <!-- Feed fragment strings -->
-    <string name="group_button_text">Group</string>
+    <string name="group_button_text">Groups</string>
     <string name="friends_button_text">Friends</string>
     <string name="location_button_text">Location</string>
     <string name="public_button_text">Public</string>
 
-
     <!-- CameraFragment strings -->
     <string name="commentPrompt">What Happened?!</string>
+    <string name="title_activity_friends_view">FriendsViewActivity</string>
+    <string name="title_activity_groups_view">GroupsViewActivity</string>
+
+    <!-- Account Fragment strings -->
+    <string name="logoutText">Logout</string>
 
 </resources>

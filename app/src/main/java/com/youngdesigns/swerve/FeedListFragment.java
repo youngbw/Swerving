@@ -1,20 +1,14 @@
 package com.youngdesigns.swerve;
 
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -31,6 +25,8 @@ public class FeedListFragment extends android.app.ListFragment {
 
     public static FeedListFragment newInstance() {
         FeedListFragment frag = new FeedListFragment();
+        Bundle args = new Bundle();
+        frag.setArguments(args);
         return frag;
     }
 

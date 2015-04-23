@@ -2,34 +2,37 @@ package com.youngdesigns.swerve;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.support.v7.app.ActionBarActivity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import model.SwerveLab;
 
 
 public class SwerveTabbedActivity extends ActionBarActivity {
 
 
     private FragmentManager manager;
-    private FeedFragment mFeedFragment;
+
+    //Trying to use this to save which fragment app navigates to with action bar back button, phone back button works properly
+    private Fragment mFeedFragment;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swerve_tabbed);
-        mFeedFragment = null;
         manager = getFragmentManager();
 
-        Fragment fragment = manager.findFragmentById(R.id.fragment_container);
+        if (savedInstanceState == null) {
 
-        if (fragment == null) {
-            fragment = new FeedFragment();
-            manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+            Fragment fragment = manager.findFragmentById(R.id.fragment_container);
+
+            if (fragment == null) {
+                fragment = FeedFragment.newInstance();
+                manager.beginTransaction().add(R.id.fragment_container, fragment).commit();
+            }
         }
 
     }
@@ -61,17 +64,33 @@ public class SwerveTabbedActivity extends ActionBarActivity {
         Fragment fragment = null;
         if (view.getId() == R.id.feed_button) {
 
-            if (mFeedFragment == null) fragment = FeedFragment.newInstance();
-            else fragment = mFeedFragment;
+            fragment = FeedFragment.newInstance();
 
         } else if (view.getId() == R.id.post_button) {
 
-            fragment = new PostFragment();
+            fragment = PostFragment.newInstance();
+
+        } else if (view.getId() == R.id.my_swerves_button) {
+
+            //set list and pass swerve list to fragment (grab userId swerves)
+            fragment = FeedListFragment.newInstance();
+
+        } else if (view.getId() == R.id.account_button) {
+
+            fragment = AccountFragment.newInstance();
 
         }
 
         if (fragment != null) {
+//            manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            mFeedFragment = fragment;
             manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         }
     }
+
+
 }
