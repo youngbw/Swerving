@@ -22,4 +22,8 @@
     <string name="location_button_text">Location</string>
     <string name="public_button_text">Public</string>
 
+
+    <!-- CameraFragment strings -->
+    <string name="commentPrompt">What Happened?!</string>
+
 </resources>

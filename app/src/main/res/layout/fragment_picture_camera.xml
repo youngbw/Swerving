@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.youngdesigns.swerve.PictureCameraFragment"
+    android:orientation="vertical" android:weightSum="1.0">
+
+
+    <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraSurface"
+        android:layout_weight=".9">
+    </SurfaceView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentTextView"
+        android:layout_weight=".1"
+        android:hint="@string/commentPrompt"
+        android:gravity="top"
+        android:lines="3"
+        android:maxLines="3"
+        />
+
+</LinearLayout>

@@ -15,12 +15,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/feedSpinner"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp"
             android:visibility="gone"></Spinner>
 
         <SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/feedSearchView"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/text_backing"
             android:visibility="gone"></SearchView>
 
     </LinearLayout>
@@ -32,7 +37,7 @@
         android:id="@+id/nested_Feed_Fragment_container"
         android:layout_weight=".8"
         style="@style/mainAppTheme">
-        </FrameLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
