@@ -41,6 +41,7 @@
             android:id="@+id/listCommentButton"
             android:layout_weight=".2"
             android:text="Comments"
+            android:background="#00FFFFFF"
             style="@style/tabbedButtonTheme"/>
 
         <TextView

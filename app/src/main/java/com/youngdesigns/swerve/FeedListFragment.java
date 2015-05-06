@@ -44,7 +44,6 @@ public class FeedListFragment extends android.app.ListFragment {
 
         adapter = new SwerveAdapter(mSwerves);
         setListAdapter(adapter);
-        getListView().setDividerHeight(20);
 
     }
 

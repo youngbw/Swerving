@@ -37,9 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/loginButtonText"
             android:onClick="loginClicked"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="2dp"
-            style="@style/tabbedButtonTheme"
+            style="@style/loginButtonTheme"
             />
 
         <Button
@@ -47,10 +45,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/registerButton"
             android:text="@string/registerButtonText"
-            style="@style/tabbedButtonTheme"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            style="@style/loginButtonTheme"
+            android:layout_marginTop="0dp"/>
 
         <TextView
             android:layout_width="wrap_content"
