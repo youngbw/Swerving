@@ -1,14 +1,18 @@
 package com.youngdesigns.swerve;
 
 
-import android.annotation.TargetApi;
 import android.app.Fragment;
-import android.graphics.Camera;
+import android.hardware.Camera;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+
+import com.youngdesigns.swerve.Camera.CameraPreview;
+
+import java.util.List;
 
 
 /**
@@ -20,8 +24,8 @@ public class PictureCameraFragment extends Fragment {
 
 
     private Camera mCamera;
-    private SurfaceView mSurfaceView;
-
+    private FrameLayout mSurfaceView;
+    private CameraPreview mPreview;
 
 
     public static PictureCameraFragment newInstance() {
@@ -31,10 +35,6 @@ public class PictureCameraFragment extends Fragment {
 //        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public PictureCameraFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -53,8 +53,8 @@ public class PictureCameraFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_picture_camera, container, false);
 
-        mSurfaceView = (SurfaceView) v.findViewById(R.id.cameraSurface);
-        ((SurfaceView) v.findViewById(R.id.cameraSurface)).setOnClickListener(new View.OnClickListener() {
+        mSurfaceView = (FrameLayout) v.findViewById(R.id.cameraSurface);
+        ((FrameLayout) v.findViewById(R.id.cameraSurface)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //do camera things
@@ -64,9 +64,30 @@ public class PictureCameraFragment extends Fragment {
         return v;
     }
 
-    @TargetApi(9)
     @Override
     public void onResume() {
         super.onResume();
+        mCamera = getCameraInstance();
+        mPreview = new CameraPreview(getActivity(), mCamera);
+        FrameLayout preview = (FrameLayout) getActivity().findViewById(R.id.cameraSurface);
+        preview.addView(mPreview);
+    }
+
+    public static Camera getCameraInstance() {
+        Camera c = null;
+        try {
+            c = Camera.open(); // attempt to get a com.youngdesigns.swerve.Camera instance
+            List<Camera.Size> sizes = c.getParameters().getSupportedPreviewSizes();
+            for (Camera.Size size : sizes) {
+                Log.d("Supported Camera Sizes", size.width + " " + size.height);
+            }
+
+        } catch (Exception e) {
+        }
+        return c;
+    }
+
+    public PictureCameraFragment() {
+        // Required empty public constructor
     }
 }
