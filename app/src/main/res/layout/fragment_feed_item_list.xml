@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listPictureView"
         android:layout_weight=".7"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
 
     <ProgressBar
         android:layout_width="match_parent"

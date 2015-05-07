@@ -1,29 +1,28 @@
 package model;
 
-import android.net.Uri;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by BrentYoung on 4/21/15.
  */
-public class SwervePost {
+public class SwervePost implements Serializable {
 
-    private UUID id;
-    private UUID userID;
+    private String id;
+    private String userID;
     private String fromLocation;
     private String toLocation;
     private String caption;
     private Date postedDate;
-    private Uri imageURI;
+    private String imagePath;
     private double swervePercentage;
+    private boolean isPublic;
     private int swerves;
     private int antiSwerves;
-    private List<Integer> usersCanSee;
-    private List<Integer> groupsCanSee;
+    private List<String> usersCanSee;
+    private List<String> groupsCanSee;
     private List<String> comments;
 
 
@@ -34,7 +33,7 @@ public class SwervePost {
 
     public SwervePost(User user) {
 
-        id = UUID.randomUUID();
+        id = "-1";
 
         if (user != null) {
             userID = user.getUserID();
@@ -50,15 +49,16 @@ public class SwervePost {
         postedDate = new Date();
         swerves = 2;
         antiSwerves = 1;
-        imageURI = null;
+        imagePath = "";
+        isPublic = false;
     }
 
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public UUID getUserID() {
+    public String getUserID() {
         return userID;
     }
 
@@ -70,19 +70,19 @@ public class SwervePost {
         return toLocation;
     }
 
-    public List<Integer> getUsersCanSee() {
+    public List<String> getUsersCanSee() {
         return usersCanSee;
     }
 
-    public List<Integer> getGroupsCanSee() {
+    public List<String> getGroupsCanSee() {
         return groupsCanSee;
     }
 
-    public void setUserID(UUID userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -126,12 +126,12 @@ public class SwervePost {
         this.postedDate = postedDate;
     }
 
-    public Uri getImageURI() {
-        return imageURI;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImageURI(Uri imageURI) {
-        this.imageURI = imageURI;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     /**
@@ -146,6 +146,22 @@ public class SwervePost {
         }
 
         swervePercentage = (swerves / (swerves + antiSwerves)) * 100.00;
+    }
+
+    public void addUserPermission(String userID) {
+        if (!usersCanSee.contains(userID)) {
+            usersCanSee.add(userID);
+        }
+    }
+
+    public void addGroupPermission(String groupID) {
+        if (!groupsCanSee.contains(groupID)) {
+            groupsCanSee.add(groupID);
+        }
+    }
+
+    public void makePublic(boolean isPublic) {
+        this.isPublic = isPublic;
     }
 
     @Override

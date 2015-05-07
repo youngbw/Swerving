@@ -16,7 +16,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/commentTextView"
+        android:id="@+id/captionTextView"
         android:layout_weight=".1"
         android:hint="@string/commentPrompt"
         android:gravity="top"

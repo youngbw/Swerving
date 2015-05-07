@@ -3,7 +3,6 @@ package model;
 import android.content.Context;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 /**
  * Created by BrentYoung on 4/21/15.
@@ -30,6 +29,7 @@ public class SwerveLab {
 
         //Take this out when services are up and running
 
+
         for (int i = 0; i < 100; i++) {
             SwervePost post = new SwervePost(new User());
             mSwerves.add(post);
@@ -41,7 +41,7 @@ public class SwerveLab {
         return mSwerves;
     }
 
-    public SwervePost getSwerve(UUID id) {
+    public SwervePost getSwerve(String id) {
         for (SwervePost sp: mSwerves) {
             if (sp.getId().equals(id)) {
                 return sp;

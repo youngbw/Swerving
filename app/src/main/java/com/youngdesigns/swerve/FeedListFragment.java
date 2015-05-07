@@ -1,6 +1,9 @@
 package com.youngdesigns.swerve;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 
 import model.SwerveLab;
 import model.SwervePost;
+import model.User;
 
 /**
  * Created by BrentYoung on 4/21/15.
@@ -42,6 +46,14 @@ public class FeedListFragment extends android.app.ListFragment {
         getActivity().setTitle(R.string.app_name);
         mSwerves = SwerveLab.getInstance(getActivity()).getSwerves();
 
+        //DEBUG
+        SharedPreferences prefs = getActivity().getApplication().getSharedPreferences(User.USER_PREFS, Context.MODE_PRIVATE);
+        SwervePost debugPost = new SwervePost();
+        debugPost.setImagePath(prefs.getString("PATH", ""));
+        debugPost.setCaption(prefs.getString("CAPTION", "woops there wasnt one!"));
+        mSwerves.add(debugPost);
+        //END DEBUG
+
         adapter = new SwerveAdapter(mSwerves);
         setListAdapter(adapter);
 
@@ -67,8 +79,11 @@ public class FeedListFragment extends android.app.ListFragment {
             SwervePost sp = getItem(position);
 
             ImageView image = (ImageView) convertView.findViewById(R.id.listPictureView);
-            if (sp.getImageURI() != null) {
-                image.setImageURI(sp.getImageURI());
+
+            if (sp.getImagePath() != null) {
+                BitmapDrawable b = PictureUtils.getScaledDrawable(getActivity(), sp.getImagePath());
+                image.setImageDrawable(b);
+                image.setVisibility(View.VISIBLE);
             } else {
                 image.setVisibility(View.GONE);
             }

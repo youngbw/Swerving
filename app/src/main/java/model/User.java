@@ -12,7 +12,7 @@ public class User {
     public static final String USER_ID = "userID";
 
 
-    private UUID userID;
+    private String userID;
     private ArrayList<UUID> groups;
     private ArrayList<UUID> friends;
     private String name;
@@ -20,17 +20,17 @@ public class User {
 
     public User() {
 
-        userID = UUID.randomUUID();
+        userID = "-1";
         groups = new ArrayList<>();
         friends = new ArrayList<>();
         name = "";
     }
 
-    public UUID getUserID() {
+    public String getUserID() {
         return userID;
     }
 
-    public void setUserID(UUID userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
