@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/selectorWidgetLayout"
-        android:layout_weight=".1">
+        android:layout_weight=".03">
 
         <Spinner
             android:layout_width="match_parent"
@@ -33,9 +33,9 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/nested_Feed_Fragment_container"
-        android:layout_weight=".8"
+        android:layout_weight=".94"
         style="@style/mainAppTheme">
     </FrameLayout>
 
@@ -44,45 +44,44 @@
         android:layout_height="wrap_content" android:orientation="horizontal"
         android:gravity="top"
         style="@style/altAppTheme"
-        android:layout_weight=".2"
+        android:layout_weight=".03"
         android:weightSum="1.0">
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" android:weightSum="1.0"
-            android:id="@+id/feedRadioGroup"
-            style="@style/altAppTheme"
-            android:orientation="horizontal">
 
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight=".25"
-                android:id="@+id/publicButton"
-                style="@style/tabbedButtonTheme" android:text="@string/public_button_text"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight=".25"
-                android:id="@+id/locationButton"
-                style="@style/tabbedButtonTheme" android:text="@string/location_button_text"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight=".2"
+            android:id="@+id/publicButton"
+            style="@style/tabbedButtonTheme" android:text="@string/public_button_text"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight=".25"
-                android:id="@+id/friendsButton"
-                style="@style/tabbedButtonTheme" android:text="@string/friends_button_text"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight=".2"
+            android:id="@+id/locationButton"
+            style="@style/tabbedButtonTheme" android:text="@string/location_button_text"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight=".25"
-                android:id="@+id/groupButton"
-                style="@style/tabbedButtonTheme" android:text="@string/group_button_text"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight=".2"
+            android:id="@+id/friendsButton"
+            style="@style/tabbedButtonTheme" android:text="@string/friends_button_text"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight=".2"
+            android:id="@+id/groupButton"
+            style="@style/tabbedButtonTheme" android:text="@string/group_button_text"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" android:layout_weight=".2"
+            android:id="@+id/mySwervesButton"
+            style="@style/tabbedButtonTheme" android:text="@string/mySwerveButtonText"/>
 
 
-
-        </RadioGroup>
 
 
 

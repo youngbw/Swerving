@@ -29,22 +29,6 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
-        <activity
-            android:name=".FriendsViewActivity"
-            android:label="@string/title_activity_friends_view"
-            android:parentActivityName=".SwerveTabbedActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.youngdesigns.swerve.SwerveTabbedActivity" />
-        </activity>
-        <activity
-            android:name=".GroupsViewActivity"
-            android:label="@string/title_activity_groups_view"
-            android:parentActivityName=".SwerveTabbedActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.youngdesigns.swerve.SwerveTabbedActivity" />
-        </activity>
     </application>
 
 </manifest>

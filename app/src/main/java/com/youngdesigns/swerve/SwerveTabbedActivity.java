@@ -70,14 +70,13 @@ public class SwerveTabbedActivity extends ActionBarActivity {
 
             fragment = PostFragment.newInstance();
 
-        } else if (view.getId() == R.id.my_swerves_button) {
+        } else if (view.getId() == R.id.friendsTabButton) {
 
-            //set list and pass swerve list to fragment (grab userId swerves)
-            fragment = FeedListFragment.newInstance();
+            fragment = FeedListFragment.newInstance(FeedListFragment.FRIENDS);
 
-        } else if (view.getId() == R.id.account_button) {
+        } else if (view.getId() == R.id.accountGroupsButton) {
 
-            fragment = AccountFragment.newInstance();
+            fragment = FeedListFragment.newInstance(FeedListFragment.GROUPS);
 
         }
 

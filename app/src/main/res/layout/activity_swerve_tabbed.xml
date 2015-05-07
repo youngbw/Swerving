@@ -43,8 +43,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/my_swerves_button"
-                android:text="@string/mySwerveButtonText"
+                android:id="@+id/friendsTabButton"
+                android:text="@string/friends_button_text"
                 style="@style/tabbedButtonTheme"
                 android:onClick="buttonClicked"
                 android:layout_weight=".25"/>
@@ -52,8 +52,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/account_button"
-                android:text="@string/accountButtonText"
+                android:id="@+id/accountGroupsButton"
+                android:text="@string/group_button_text"
                 style="@style/tabbedButtonTheme"
                 android:onClick="buttonClicked"
                 android:layout_weight=".25"/>

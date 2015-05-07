@@ -20,6 +20,7 @@ public class FeedFragment extends Fragment {
     private Button mLocationButton;
     private Button mFriendsButton;
     private Button mGroupsButton;
+    private Button mMySwervesButton;
 
     private SearchView search;
     private Spinner spinner;
@@ -56,14 +57,16 @@ public class FeedFragment extends Fragment {
         if (mLocationButton == null) mLocationButton = (Button) getActivity().findViewById(R.id.locationButton);
         if (mFriendsButton == null) mFriendsButton = (Button) getActivity().findViewById(R.id.friendsButton);
         if (mGroupsButton == null) mGroupsButton = (Button) getActivity().findViewById(R.id.groupButton);
+        if (mMySwervesButton == null) mMySwervesButton = (Button) getActivity().findViewById(R.id.mySwervesButton);
 
         addListeners();
 
         search = (SearchView) getActivity().findViewById(R.id.feedSearchView);
         spinner = (Spinner) getActivity().findViewById(R.id.feedSpinner);
 
-        Fragment fragment = FeedListFragment.newInstance(); //may want to pass the list in here as an argument
+        Fragment fragment = FeedListFragment.newInstance(FeedListFragment.SWERVES); //may want to pass the list in here as an argument
         getFragmentManager().beginTransaction().replace(R.id.nested_Feed_Fragment_container, fragment).commit();
+
 
     }
 
@@ -101,6 +104,14 @@ public class FeedFragment extends Fragment {
             }
         });
 
+        mMySwervesButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //load list with users swerves
+                hideAllExtras();
+            }
+        });
 
     }
 
