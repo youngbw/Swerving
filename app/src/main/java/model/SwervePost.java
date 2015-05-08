@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class SwervePost implements Serializable {
 
+    public static final String POST_ID = "postID";
+
     private String id;
     private String userID;
     private String fromLocation;
@@ -23,7 +25,7 @@ public class SwervePost implements Serializable {
     private int antiSwerves;
     private List<String> usersCanSee;
     private List<String> groupsCanSee;
-    private List<String> comments;
+    private ArrayList<Comment> comments; //userID or name, comment string
 
 
     public SwervePost() {
@@ -44,8 +46,8 @@ public class SwervePost implements Serializable {
         comments = new ArrayList<>();
 
         caption = "None";
-        toLocation = "New York";
-        fromLocation = "Seattle";
+        toLocation = "";
+        fromLocation = "";
         postedDate = new Date();
         swerves = 2;
         antiSwerves = 1;
@@ -106,11 +108,11 @@ public class SwervePost implements Serializable {
         return swervePercentage;
     }
 
-    public List<String> getComments() {
+    public ArrayList<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(List<String> comments) {
+    public void setComments(ArrayList<Comment> comments) {
         this.comments = comments;
     }
 
@@ -162,6 +164,10 @@ public class SwervePost implements Serializable {
 
     public void makePublic(boolean isPublic) {
         this.isPublic = isPublic;
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 
     @Override

@@ -123,7 +123,7 @@ public class PictureCameraFragment extends Fragment implements PostUI {
         mCamera = getCameraInstance();
         mPreview = new CameraPreview(getActivity(), mCamera);
         FrameLayout preview = (FrameLayout) getActivity().findViewById(R.id.cameraSurface);
-        preview.addView(mPreview);
+        preview.addView(mPreview); //this causes crash occasionally, possibly when screen turns off
     }
 
     public static Camera getCameraInstance() {

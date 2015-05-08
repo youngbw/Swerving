@@ -31,5 +31,8 @@
 
     <!-- ActionBar strings -->
     <string name="logoutText">Logout</string>
+    <string name="title_activity_comment">CommentActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
