@@ -64,6 +64,7 @@ public class NavActivity extends ActionBarActivity
             @Override
             public void onClick(View v) {
                 manager.beginTransaction().replace(R.id.frag_container, PostFragment.newInstance()).commit();
+                postButton.setVisibility(View.GONE);
             }
 
         });
