@@ -33,6 +33,10 @@
             android:name=".CommentActivity"
             android:label="@string/title_activity_comment" >
         </activity>
+        <activity
+            android:name=".NavActivity"
+            android:label="@string/title_activity_nav" >
+        </activity>
     </application>
 
 </manifest>

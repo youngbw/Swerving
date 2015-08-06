@@ -49,20 +49,20 @@ public class FeedFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        if (mPublicButton == null) {
-            mPublicButton = (Button) getActivity().findViewById(R.id.publicButton);
-            mPublicButton.setSelected(true);
-            //Load list with public list items here because this means this is the first time this activity has been created.
-        }
-        if (mLocationButton == null) mLocationButton = (Button) getActivity().findViewById(R.id.locationButton);
-        if (mFriendsButton == null) mFriendsButton = (Button) getActivity().findViewById(R.id.friendsButton);
-        if (mGroupsButton == null) mGroupsButton = (Button) getActivity().findViewById(R.id.groupButton);
-        if (mMySwervesButton == null) mMySwervesButton = (Button) getActivity().findViewById(R.id.mySwervesButton);
+//        if (mPublicButton == null) {
+//            mPublicButton = (Button) getActivity().findViewById(R.id.publicButton);
+//            mPublicButton.setSelected(true);
+//            //Load list with public list items here because this means this is the first time this activity has been created.
+//        }
+//        if (mLocationButton == null) mLocationButton = (Button) getActivity().findViewById(R.id.locationButton);
+//        if (mFriendsButton == null) mFriendsButton = (Button) getActivity().findViewById(R.id.friendsButton);
+//        if (mGroupsButton == null) mGroupsButton = (Button) getActivity().findViewById(R.id.groupButton);
+//        if (mMySwervesButton == null) mMySwervesButton = (Button) getActivity().findViewById(R.id.mySwervesButton);
 
-        addListeners();
+//        addListeners();
 
-        search = (SearchView) getActivity().findViewById(R.id.feedSearchView);
-        spinner = (Spinner) getActivity().findViewById(R.id.feedSpinner);
+//        search = (SearchView) getActivity().findViewById(R.id.feedSearchView);
+//        spinner = (Spinner) getActivity().findViewById(R.id.feedSpinner);
 
         Fragment fragment = FeedListFragment.newInstance(FeedListFragment.SWERVES); //may want to pass the list in here as an argument
         getFragmentManager().beginTransaction().replace(R.id.nested_Feed_Fragment_container, fragment).commit();

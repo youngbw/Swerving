@@ -42,6 +42,6 @@ public class LoginActivity extends Activity {
 
     //Placeholder for before functionality is in place.
     public void loginClicked(View view) {
-        startActivity(new Intent(LoginActivity.this, SwerveTabbedActivity.class));
+        startActivity(new Intent(LoginActivity.this, NavActivity.class));
     }
 }

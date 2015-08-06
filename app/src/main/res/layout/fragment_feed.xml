@@ -2,90 +2,88 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.FeedFragment"
     android:orientation="vertical" style="@style/mainAppTheme"
-    android:gravity="center" android:weightSum="1.0">
+    android:gravity="center">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/selectorWidgetLayout"
-        android:layout_weight=".03">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:id="@+id/selectorWidgetLayout"-->
+        <!--android:layout_weight=".03">-->
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/feedSpinner"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="2dp"
-            android:visibility="gone"></Spinner>
+        <!--<Spinner-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/feedSpinner"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:visibility="gone"></Spinner>-->
 
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/feedSearchView"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/text_backing"
-            android:visibility="gone"></SearchView>
+        <!--<SearchView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/feedSearchView"-->
+            <!--android:layout_marginTop="2dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:background="@drawable/text_backing"-->
+            <!--android:visibility="gone"></SearchView>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nested_Feed_Fragment_container"
-        android:layout_weight=".94"
-        style="@style/mainAppTheme">
+        android:layout_height="match_parent"
+        android:id="@+id/nested_Feed_Fragment_container">
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal"
-        android:gravity="top"
-        style="@style/altAppTheme"
-        android:layout_weight=".03"
-        android:weightSum="1.0">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" android:orientation="horizontal"-->
+        <!--android:gravity="top"-->
+        <!--style="@style/altAppTheme"-->
+        <!--android:layout_weight=".03"-->
+        <!--android:weightSum="1.0">-->
 
 
 
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:layout_weight=".2"
-            android:id="@+id/publicButton"
-            style="@style/tabbedButtonTheme" android:text="@string/public_button_text"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent" android:layout_weight=".2"-->
+            <!--android:id="@+id/publicButton"-->
+            <!--style="@style/tabbedButtonTheme" android:text="@string/public_button_text"/>-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:layout_weight=".2"
-            android:id="@+id/locationButton"
-            style="@style/tabbedButtonTheme" android:text="@string/location_button_text"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent" android:layout_weight=".2"-->
+            <!--android:id="@+id/locationButton"-->
+            <!--style="@style/tabbedButtonTheme" android:text="@string/location_button_text"/>-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:layout_weight=".2"
-            android:id="@+id/friendsButton"
-            style="@style/tabbedButtonTheme" android:text="@string/friends_button_text"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent" android:layout_weight=".2"-->
+            <!--android:id="@+id/friendsButton"-->
+            <!--style="@style/tabbedButtonTheme" android:text="@string/friends_button_text"/>-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:layout_weight=".2"
-            android:id="@+id/groupButton"
-            style="@style/tabbedButtonTheme" android:text="@string/group_button_text"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent" android:layout_weight=".2"-->
+            <!--android:id="@+id/groupButton"-->
+            <!--style="@style/tabbedButtonTheme" android:text="@string/group_button_text"/>-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" android:layout_weight=".2"
-            android:id="@+id/mySwervesButton"
-            style="@style/tabbedButtonTheme" android:text="@string/mySwerveButtonText"/>
-
-
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent" android:layout_weight=".2"-->
+            <!--android:id="@+id/mySwervesButton"-->
+            <!--style="@style/tabbedButtonTheme" android:text="@string/mySwerveButtonText"/>-->
 
 
 
-    </LinearLayout>
+
+
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>

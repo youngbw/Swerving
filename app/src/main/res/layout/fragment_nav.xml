@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    tools:context="com.youngdesigns.swerve.NavActivity$PlaceholderFragment"
+    android:orientation="vertical"
+    style="@style/altAppTheme">
+
+    <!-- remove margin to make green border go away -->
+    <!--<FrameLayout-->
+        <!--android:id="@+id/container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--style="@style/mainAppTheme"></FrameLayout>-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/post_button"-->
+            <!--android:layout_width="75dip"-->
+            <!--android:layout_height="75dip"-->
+            <!--android:layout_marginTop="-85dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:background="@drawable/swerve_button_background"-->
+            <!--android:src="@drawable/ic_launcher"-->
+            <!--/>-->
+
+</LinearLayout>
