@@ -45,4 +45,7 @@
 
     <string name="action_example">Example action</string>
 
+    <string name="search_title">Search</string>
+    <string name="search_hint">Name or Location</string>
+
 </resources>

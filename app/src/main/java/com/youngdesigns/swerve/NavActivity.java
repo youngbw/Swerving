@@ -2,11 +2,17 @@ package com.youngdesigns.swerve;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +57,7 @@ public class NavActivity extends ActionBarActivity
             fragment = FeedListFragment.newInstance(FeedListFragment.SWERVES);
         }
         manager.beginTransaction().replace(R.id.frag_container, fragment).commit();
+
 
     }
 
@@ -123,6 +130,21 @@ public class NavActivity extends ActionBarActivity
 //            restoreActionBar();
 //            return true;
 //        }
+
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.nav, menu);
+
+        // Get the SearchView and set the searchable configuration
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -178,6 +200,21 @@ public class NavActivity extends ActionBarActivity
             super.onAttach(activity);
             ((NavActivity) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+            Log.d("SEARCH_TEXT", query);
         }
     }
 
