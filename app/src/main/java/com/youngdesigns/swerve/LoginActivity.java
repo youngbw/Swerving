@@ -3,9 +3,8 @@ package com.youngdesigns.swerve;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class LoginActivity extends Activity {
@@ -16,32 +15,34 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
     }
 
+    //Placeholder for before functionality is in place.
+    public void loginClicked(View view) {
+//        startActivity(new Intent(LoginActivity.this, NavActivity.class));
+        if (checkLogin()) {
+            startActivity(new Intent(LoginActivity.this, NavActivity.class));
+        }
+    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+    private boolean checkLogin() {
+        return checkUserName();
+
+
+    }
+
+    private boolean checkUserName() {
+        EditText nameField = (EditText) findViewById(R.id.userNameField);
+        String text = nameField.getText().toString();
+        return checkPassword(text);
+    }
+
+    private boolean checkPassword(String userName) {
+//        EditText passwordField = (EditText) findViewById(R.id.passwordField);
+//        Database.validatePassword(userName, passwordField.getText().toString());
+        //check result;
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    //Placeholder for before functionality is in place.
-    public void loginClicked(View view) {
-        startActivity(new Intent(LoginActivity.this, NavActivity.class));
+    public void createNewAccount(View view){
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
 }

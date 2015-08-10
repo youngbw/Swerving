@@ -22,7 +22,7 @@ public class SplashActivity extends Activity {
             public void run() {
 
                 try {
-                    sleep(3000);
+                    sleep(1000);
                     checkScreen();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -44,14 +44,11 @@ public class SplashActivity extends Activity {
 
         Intent myIntent;
         SharedPreferences prefs = getSharedPreferences(User.USER_PREFS, MODE_PRIVATE);
-//        if (prefs != null && prefs.contains(User.USER_ID)) {
-//            myIntent = new Intent(SplashActivity.this, SwerveTabbedActivity.class);
-//        } else {
-//            myIntent = new Intent(SplashActivity.this, LoginActivity.class);
-//        }
-
-        //Placeholder for before functionality is implemented
-        myIntent = new Intent(SplashActivity.this, LoginActivity.class);
+        if (!prefs.getString(User.USER_ID, "").equals("")) {
+            myIntent = new Intent(SplashActivity.this, NavActivity.class);
+        } else {
+            myIntent = new Intent(SplashActivity.this, LoginActivity.class);
+        }
         startActivity(myIntent);
 
     }

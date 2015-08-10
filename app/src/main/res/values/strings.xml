@@ -8,6 +8,7 @@
     <string name="title_activity_login">LoginActivity</string>
 
     <!-- Login Activity strings -->
+    <string name="userNameHint">User Name</string>
     <string name="loginButtonText">Login</string>
     <string name="registerButtonText">Create Account</string>
     <string name="forgotPWtext">Forgot Password</string>
@@ -47,5 +48,21 @@
 
     <string name="search_title">Search</string>
     <string name="search_hint">Name or Location</string>
+    <string name="title_activity_register">RegisterActivity</string>
+
+    <!-- registration strings -->
+    <string name="phone_field_text">Phone Number</string>
+    <string name="male_gender_text">Male</string>
+    <string name="female_gender_text">Female</string>
+    <string name="hometown_text">Home Town</string>
+    <string name="sec_question_text">Security Question</string>
+    <string name="sec_answer_text">Security Question Answer</string>
+    <string name="password_text">Password</string>
+    <string name="confirm_pw">Confirm Password</string>
+    <string name="confirm_account">Confirm</string>
+
+    <string name="hometown_help">The default location for your posts</string>
+    <string name="phone_help">Please enter a 10 digit phone number\nthis will be used to validate your account</string>
+    <string name="sec_question_help">Enter something that will be memorable.</string>
 
 </resources>
