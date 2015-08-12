@@ -174,4 +174,14 @@ public class PictureCameraFragment extends Fragment implements PostUI {
         return post;
 
     }
+
+    public void hidePicture(boolean toHide) {
+        FrameLayout pictureFrame = (FrameLayout) getActivity().findViewById(R.id.cameraSurface);
+        if (toHide) {
+            pictureFrame.setVisibility(View.GONE);
+        } else {
+            pictureFrame.setVisibility(View.VISIBLE);
+        }
+    }
+
 }

@@ -37,12 +37,17 @@ public class ChoosePublishFragment extends Fragment implements PostUI {
         ChoosePublishFragment fragment = new ChoosePublishFragment();
         Bundle args = new Bundle();
         args.putSerializable(SWERVE_TAG, post);
+        fragment.setPost(post);
         fragment.setArguments(args);
         return fragment;
     }
 
     public ChoosePublishFragment() {
         // Required empty public constructor
+    }
+
+    public void setPost(SwervePost thePost) {
+        this.post = thePost;
     }
 
     @Override

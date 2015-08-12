@@ -2,6 +2,7 @@ package com.youngdesigns.swerve;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +23,7 @@ import android.widget.ImageButton;
 public class NavActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    private android.app.FragmentManager manager;
+    private FragmentManager manager;
     private ImageButton postButton;
 
     /**
@@ -56,7 +57,7 @@ public class NavActivity extends ActionBarActivity
         if (fragment == null) {
             fragment = FeedListFragment.newInstance(FeedListFragment.SWERVES);
         }
-        manager.beginTransaction().replace(R.id.frag_container, fragment).commit();
+        manager.beginTransaction().add(R.id.frag_container, fragment).addToBackStack(null).commit();
 
 
     }
@@ -69,11 +70,17 @@ public class NavActivity extends ActionBarActivity
 
             @Override
             public void onClick(View v) {
-                manager.beginTransaction().replace(R.id.frag_container, PostFragment.newInstance()).commit();
+
+                Log.d("BACKSTACK", manager.getBackStackEntryCount() + "");
+//                manager.beginTransaction().add(R.id.frag_container, PostFragment.newInstance()).addToBackStack(null).commit();
+                startActivity(new Intent(NavActivity.this, PostActivity.class));
                 postButton.setVisibility(View.GONE);
+                Log.d("BACKSTACK", manager.getBackStackEntryCount() + "");
             }
 
         });
+
+        postButton.setVisibility(View.VISIBLE);
     }
 
     @Override

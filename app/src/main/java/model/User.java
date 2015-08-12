@@ -25,21 +25,14 @@ public class User {
     private Character sex;
     private String secQuestion;
     private String secAnswer;
-
+    private String password;
 
 
     private ArrayList<UUID> groups;
     private ArrayList<UUID> friends;
 
 
-    public User() {
-
-        userID = "-1";
-        groups = new ArrayList<>();
-        friends = new ArrayList<>();
-        name = "";
-    }
-
+    public User() {}
 
     public String getUserID() {
         return userID;
@@ -114,5 +107,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -68,7 +68,7 @@ public class SwerveTabbedActivity extends ActionBarActivity {
 
         } else if (view.getId() == R.id.post_button) {
 
-            fragment = PostFragment.newInstance();
+//            fragment = PostFragment.newInstance();
 
         } else if (view.getId() == R.id.friendsTabButton) {
 

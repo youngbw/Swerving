@@ -29,6 +29,7 @@
     <string name="commentPrompt">What Happened?!</string>
     <string name="title_activity_friends_view">FriendsViewActivity</string>
     <string name="title_activity_groups_view">GroupsViewActivity</string>
+    <string name="title_activity_post">Swerve Post</string>
 
     <!-- ActionBar strings -->
     <string name="logoutText">Logout</string>

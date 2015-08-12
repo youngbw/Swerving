@@ -65,7 +65,7 @@ public class FeedFragment extends Fragment {
 //        spinner = (Spinner) getActivity().findViewById(R.id.feedSpinner);
 
         Fragment fragment = FeedListFragment.newInstance(FeedListFragment.SWERVES); //may want to pass the list in here as an argument
-        getFragmentManager().beginTransaction().replace(R.id.nested_Feed_Fragment_container, fragment).commit();
+        getFragmentManager().beginTransaction().replace(R.id.nested_Feed_Fragment_container, fragment).addToBackStack(null).commit();
 
 
     }
