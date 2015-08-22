@@ -39,6 +39,9 @@ public class SwerveLab {
             Comment comment = new Comment();
             comment.addComment("Jake", "This is an awesome comment");
             post.addComment(comment);
+            if (i % 5 == 0) {
+                post.setCommentsAllowed(false);
+            }
             mComments.add(comment);
             mSwerves.add(post);
         }

@@ -66,4 +66,8 @@
     <string name="phone_help">Please enter a 10 digit phone number\nthis will be used to validate your account</string>
     <string name="sec_question_help">Enter something that will be memorable.</string>
 
+    <!-- Comment activity strings -->
+    <string name="comment_hint">Thoughts?</string>
+    <string name="submit_comment_string">✔</string>
+
 </resources>

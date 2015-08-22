@@ -31,7 +31,8 @@
                     android:layout_height="wrap_content"
                     style="@style/textWidgetTheme"
                     android:hint="@string/userNameHint"
-                    android:inputType="text"
+                    android:inputType="textCapSentences|textAutoCorrect"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -42,6 +43,7 @@
                     style="@style/textWidgetTheme"
                     android:hint="@string/password_text"
                     android:inputType="textPassword"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -52,6 +54,7 @@
                     style="@style/textWidgetTheme"
                     android:hint="@string/confirm_pw"
                     android:inputType="textPassword"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -62,6 +65,7 @@
                     style="@style/textWidgetTheme"
                     android:hint="@string/phone_field_text"
                     android:inputType="phone"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -72,7 +76,8 @@
                     android:layout_height="wrap_content"
                     style="@style/textWidgetTheme"
                     android:hint="@string/sec_question_text"
-                    android:inputType="text"
+                    android:inputType="textCapSentences|textAutoCorrect"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -82,7 +87,8 @@
                     android:layout_height="wrap_content"
                     style="@style/textWidgetTheme"
                     android:hint="@string/sec_answer_text"
-                    android:inputType="text"
+                    android:inputType="textCapSentences|textAutoCorrect"
+                    android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -92,7 +98,6 @@
                     android:layout_height="wrap_content"
                     style="@style/textWidgetTheme"
                     android:hint="@string/hometown_text"
-                    android:inputType="text"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 

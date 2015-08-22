@@ -1,12 +1,55 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.youngdesigns.swerve.CommentActivity"
-    style="@style/altAppTheme"
-    android:id="@+id/comment_fragment_container">
+    style="@style/altAppTheme" android:weightSum="100"
+    android:padding="0dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/comment_fragment_container" android:layout_weight="90"
+        style="@style/altAppTheme">
 
 
-</FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:paddingTop="2dp"
+        android:weightSum="100" android:layout_weight="10">
+
+
+        <EditText
+            android:id="@+id/comment_text_input"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="98"
+            style="@style/textWidgetTheme"
+            android:lines="2"
+            android:maxLines="4"
+            android:singleLine="false"
+            android:maxLength="250"
+            android:layout_margin="0dp"
+            android:hint="@string/comment_hint"/>
+
+        <Button
+            android:id="@+id/submit_comment_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="@string/submit_comment_string"
+            android:layout_weight="2"
+            android:layout_margin="2dp"
+            style="@style/loginButtonTheme"/>
+
+        </LinearLayout>
+
+
+
+</LinearLayout>
+
+

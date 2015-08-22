@@ -1,8 +1,6 @@
 package com.youngdesigns.swerve;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -87,11 +85,12 @@ public class FeedListFragment extends android.app.ListFragment {
             mSwerves = SwerveLab.getInstance(getActivity()).getSwerves();
 
             //DEBUG
-            SharedPreferences prefs = getActivity().getApplication().getSharedPreferences(User.USER_PREFS, Context.MODE_PRIVATE);
-            SwervePost debugPost = new SwervePost();
-            debugPost.setImagePath(prefs.getString("PATH", "thepicture.jpg"));
-            debugPost.setCaption(prefs.getString("CAPTION", "woops there wasnt one!"));
-            mSwerves.add(debugPost);
+//            SharedPreferences prefs = getActivity().getApplication().getSharedPreferences(User.USER_PREFS, Context.MODE_PRIVATE);
+//            SwervePost debugPost = new SwervePost();
+//            debugPost.setImagePath(prefs.getString("PATH", "thepicture.jpg"));
+//            debugPost.setCaption(prefs.getString("CAPTION", "woops there wasnt one!"));
+//
+//            mSwerves.add(debugPost);
             //END DEBUG
 
             adapter = new SwerveAdapter(mSwerves);
@@ -116,7 +115,8 @@ public class FeedListFragment extends android.app.ListFragment {
 
             mComments = SwerveLab.getInstance(getActivity()).getComments(postID); // query comments using postID
             adapter = new CommentsAdapter(mComments);
-            getListView().setDividerHeight(2);
+
+            getListView().setDividerHeight(3);
 
         }
         setListAdapter(adapter);
@@ -146,7 +146,7 @@ public class FeedListFragment extends android.app.ListFragment {
 
             ImageView image = (ImageView) convertView.findViewById(R.id.listPictureView);
 
-            if (sp.getImagePath() != null) {
+            if (true) {//sp.getImagePath() != null) {
                 BitmapDrawable b = PictureUtils.getScaledDrawable(getActivity(), sp.getImagePath());
                 image.setImageDrawable(b);
                 image.setVisibility(View.VISIBLE);

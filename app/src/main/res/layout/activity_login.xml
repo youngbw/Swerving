@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/userNameHint"
+            android:imeOptions="actionNext"
             android:textSize="20sp"
             android:inputType="text"
             style="@style/textWidgetTheme"/>
@@ -39,6 +40,8 @@
             android:hint="@string/password_text"
             android:textSize="20sp"
             android:inputType="textPassword"
+            android:imeOptions="actionGo"
+            android:singleLine="true"
             style="@style/textWidgetTheme"/>
 
         <Button

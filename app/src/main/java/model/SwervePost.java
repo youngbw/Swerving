@@ -19,6 +19,7 @@ public class SwervePost implements Serializable {
     private String caption;
     private Date postedDate;
     private String imagePath;
+    private boolean commentsAllowed;
     private double swervePercentage;
     private boolean isPublic;
     private int swerves;
@@ -53,8 +54,16 @@ public class SwervePost implements Serializable {
         antiSwerves = 1;
         imagePath = "";
         isPublic = false;
+        commentsAllowed = true;
     }
 
+    public boolean isCommentsAllowed() {
+        return commentsAllowed;
+    }
+
+    public void setCommentsAllowed(boolean commentsAllowed) {
+        this.commentsAllowed = commentsAllowed;
+    }
 
     public String getId() {
         return id;
