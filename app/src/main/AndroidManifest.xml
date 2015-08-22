@@ -32,8 +32,6 @@
         <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post" >
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".CommentActivity"
@@ -54,6 +52,10 @@
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="@string/title_activity_forgot_password" >
         </activity>
     </application>
 

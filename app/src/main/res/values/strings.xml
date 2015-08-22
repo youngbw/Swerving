@@ -74,5 +74,6 @@
     <string name="post_pic_text">Normal</string>
     <string name="post_text_only">Text Only</string>
     <string name="activate_comments_string">Allow Comments</string>
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
 
 </resources>
