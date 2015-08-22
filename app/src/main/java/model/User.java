@@ -21,7 +21,7 @@ public class User {
     private String userID;
     private String name;
     private String homeTown;
-    private String phone;
+    private String email;
     private Character sex;
     private String secQuestion;
     private String secAnswer;
@@ -66,12 +66,12 @@ public class User {
         this.homeTown = homeTown;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Character getSex() {

@@ -21,7 +21,7 @@ public class RegisterActivity extends Activity {
     private EditText confirmPasswordField;
     private EditText secQuestionField;
     private EditText answerField;
-    private EditText phoneField;
+    private EditText emailField;
     private RadioButton maleButton;
     private RadioButton femaleButton;
     private Button confirmButton;
@@ -67,7 +67,7 @@ public class RegisterActivity extends Activity {
         userNameField = (EditText) findViewById(R.id.registerUserName);
         passWordField = (EditText) findViewById(R.id.registerPassword);
         confirmPasswordField = (EditText) findViewById(R.id.registerConfirmPassword);
-        phoneField = (EditText) findViewById(R.id.registerPhone);
+        emailField = (EditText) findViewById(R.id.registerEmail);
         secQuestionField = (EditText) findViewById(R.id.registerQuestion);
         answerField = (EditText) findViewById(R.id.registerAnswer);
         hometownField = (EditText) findViewById(R.id.registerHometown);
@@ -94,7 +94,7 @@ public class RegisterActivity extends Activity {
 
         //TODO:Database check for userName uniqueness
 
-        if (phoneField.getText().toString().length() > 10) {
+        if (emailField.getText().toString().contains("@") && (emailField.getText().toString().contains(".com") || emailField.getText().toString().contains(".net"))) {
 
             String pw = passWordField.getText().toString();
             if (pw.equals(confirmPasswordField.getText().toString()) && pw.length() > 7) {
@@ -124,7 +124,7 @@ public class RegisterActivity extends Activity {
     private void setupUser() {
         User current = new User();
         current.setName(userNameField.getText().toString());
-        current.setPhone(phoneField.getText().toString());
+        current.setEmail(emailField.getText().toString());
         current.setPassword(passWordField.getText().toString());
         current.setSecAnswer(answerField.getText().toString());
         current.setSecQuestion(secQuestionField.getText().toString());
