@@ -42,6 +42,7 @@ public class SwerveLab {
             if (i % 5 == 0) {
                 post.setCommentsAllowed(false);
             }
+            post.setSwerveCount(10);
             mComments.add(comment);
             mSwerves.add(post);
         }

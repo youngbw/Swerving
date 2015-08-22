@@ -47,4 +47,8 @@ public class LoginActivity extends Activity {
     public void createNewAccount(View view){
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
     }
+
+    public void forgotPassword(View view) {
+        startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+    }
 }

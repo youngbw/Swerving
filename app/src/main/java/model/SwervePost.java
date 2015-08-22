@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class SwervePost implements Serializable {
 
+    //TODO:update this class with the correct form of what the picture will be coming from the db as
+
     public static final String POST_ID = "postID";
 
     private String id;
@@ -85,9 +87,6 @@ public class SwervePost implements Serializable {
         this.caption = caption;
     }
 
-    public double getSwervePercentage() {
-        return swerveCount;
-    }
 
     public ArrayList<Comment> getComments() {
         return comments;
@@ -96,6 +95,8 @@ public class SwervePost implements Serializable {
     public void setComments(ArrayList<Comment> comments) {
         this.comments = comments;
     }
+
+    public int getSwerveCount() { return this.swerveCount; }
 
     public void setSwerveCount(int swerveCount) {
         this.swerveCount = swerveCount;

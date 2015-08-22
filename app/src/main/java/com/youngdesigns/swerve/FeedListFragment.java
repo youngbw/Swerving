@@ -10,9 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 
 import model.Comment;
@@ -146,6 +146,7 @@ public class FeedListFragment extends android.app.ListFragment {
 
             ImageView image = (ImageView) convertView.findViewById(R.id.listPictureView);
 
+            //TODO: modify this if statement to work with the returned database version of Swerve Pic
             if (true) {//sp.getImagePath() != null) {
                 BitmapDrawable b = PictureUtils.getScaledDrawable(getActivity(), sp.getImagePath());
                 image.setImageDrawable(b);
@@ -157,13 +158,13 @@ public class FeedListFragment extends android.app.ListFragment {
             TextView text = (TextView) convertView.findViewById(R.id.listTextView);
             text.setText(sp.getCaption());
 
-            ProgressBar bar = (ProgressBar) convertView.findViewById(R.id.listProgressBar);
-            bar.setMax(100);
-            bar.setProgress((int)sp.getSwervePercentage());
+            TextView counter = (TextView) convertView.findViewById(R.id.swerve_count_text);
+            counter.setText("SS " + sp.getSwerveCount());
+            counter.setTextColor(Color.CYAN);
 
             Button comment = (Button) convertView.findViewById(R.id.listCommentButton);
             if (!sp.getComments().isEmpty()) {
-                comment.setTextColor(Color.BLUE);
+                comment.setTextColor(Color.CYAN);
                 comment.setOnClickListener(new View.OnClickListener() {
 
                     @Override
@@ -177,7 +178,8 @@ public class FeedListFragment extends android.app.ListFragment {
 
 
             TextView date = (TextView) convertView.findViewById(R.id.listTextDateView);
-            date.setText(sp.getPostedDate().toString());
+            DateFormat format = DateFormat.getDateTimeInstance();
+            date.setText(format.format(sp.getPostedDate()));
 
             return convertView;
 

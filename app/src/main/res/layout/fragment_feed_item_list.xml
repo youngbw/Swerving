@@ -13,11 +13,16 @@
         android:layout_weight=".7"
         android:visibility="visible"/>
 
-    <ProgressBar
+    <TextView
+        android:id="@+id/swerve_count_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listProgressBar"
-        android:layout_weight=".05" />
+        android:layout_weight=".05"
+        android:gravity="left"
+        android:textSize="18sp"
+        style="@style/textWidgetTheme"
+        android:background="#FFFFFF"
+        android:textColor="#91FFDA"/>
 
     <EditText
         android:layout_width="match_parent"
