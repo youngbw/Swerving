@@ -22,7 +22,7 @@
     <!-- Feed fragment strings -->
     <string name="group_button_text">Groups</string>
     <string name="friends_button_text">Friends</string>
-    <string name="location_button_text">Loc</string>
+    <string name="location_button_text">Location (City, State)</string>
     <string name="public_button_text">Public</string>
 
     <!-- CameraFragment strings -->
@@ -52,7 +52,7 @@
     <string name="title_activity_register">RegisterActivity</string>
 
     <!-- registration strings -->
-    <string name="phone_field_text">Phone Number</string>
+    <string name="email_text_field">Email Address</string>
     <string name="male_gender_text">Male</string>
     <string name="female_gender_text">Female</string>
     <string name="hometown_text">Home Town</string>
@@ -63,11 +63,16 @@
     <string name="confirm_account">Confirm</string>
 
     <string name="hometown_help">The default location for your posts</string>
-    <string name="phone_help">Please enter a 10 digit phone number\nthis will be used to validate your account</string>
+    <string name="email_help">Please enter a valid email address ending in com or net after the period\nthis will be used to validate your account</string>
     <string name="sec_question_help">Enter something that will be memorable.</string>
 
     <!-- Comment activity strings -->
     <string name="comment_hint">Thoughts?</string>
     <string name="submit_comment_string">✔</string>
+
+    <!-- Post Activity Strings -->
+    <string name="post_pic_text">Normal</string>
+    <string name="post_text_only">Text Only</string>
+    <string name="activate_comments_string">Allow Comments</string>
 
 </resources>

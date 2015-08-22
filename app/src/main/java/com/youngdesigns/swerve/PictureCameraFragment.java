@@ -6,13 +6,17 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.youngdesigns.swerve.Camera.CameraPreview;
@@ -38,6 +42,8 @@ public class PictureCameraFragment extends Fragment implements PostUI {
     private FrameLayout mSurfaceView;
     private CameraPreview mPreview;
     private SwervePost post;
+    private String fileName;
+    private boolean pictureTaken;
 
 
     public static PictureCameraFragment newInstance() {
@@ -68,13 +74,13 @@ public class PictureCameraFragment extends Fragment implements PostUI {
 
         mSurfaceView = (FrameLayout) v.findViewById(R.id.cameraSurface);
 
-        ((FrameLayout) v.findViewById(R.id.cameraSurface)).setOnTouchListener(new View.OnTouchListener() {
+        ((ImageButton) v.findViewById(R.id.take_picture_button)).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent m) {
                 mCamera.takePicture(null, null, new Camera.PictureCallback() {
                     @Override
                     public void onPictureTaken(byte[] data, Camera camera) {
-                        String fileName = "thepicture" + ".jpeg";
+                        fileName = "thepicture" + ".jpeg";
                         FileOutputStream os = null;
                         boolean success = true;
 
@@ -88,9 +94,7 @@ public class PictureCameraFragment extends Fragment implements PostUI {
                             prefs.edit().putString("PATH", fileName).commit();
                             //END DEBUG
 
-                            //add path to swerve post
-                            post.setImagePath(fileName);
-
+                            pictureTaken = true;
 
                         } catch (Exception e) {
                             Log.e("FILE ERROR DUDE", "" + e.toString());
@@ -122,8 +126,29 @@ public class PictureCameraFragment extends Fragment implements PostUI {
         super.onResume();
         mCamera = getCameraInstance();
         mPreview = new CameraPreview(getActivity(), mCamera);
+        pictureTaken = false;
         FrameLayout preview = (FrameLayout) getActivity().findViewById(R.id.cameraSurface);
-        preview.addView(mPreview); //this causes crash occasionally, possibly when screen turns off
+        preview.addView(mPreview, 0); //this causes crash occasionally, possibly when screen turns off
+
+        final EditText locationView = (EditText) getActivity().findViewById(R.id.location_search);
+        locationView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//                locationView.clearComposingText();
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                Log.d("CHAR SEQUENCE LOC", s + "");
+                String result = searchLocation(s);
+//                locationView.append(result, 0, result.length());
+//                locationView.setSelection(start + count - 1);
+//                locationView.extendSelection(locationView.getText().toString().length());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
     }
 
     public static Camera getCameraInstance() {
@@ -151,7 +176,11 @@ public class PictureCameraFragment extends Fragment implements PostUI {
     }
 
     @Override
-    public void postNewSwerve(SwervePost post) {}
+    public void postNewSwerve(SwervePost post) {
+
+        //TODO: database things to grab picture and put post and pic into db
+
+    }
 
     @Override
     public SwervePost composeSwerve() {
@@ -165,11 +194,15 @@ public class PictureCameraFragment extends Fragment implements PostUI {
         EditText mCaption = (EditText)getActivity().findViewById(R.id.captionTextView);
         post.setCaption(mCaption.getText().toString());
 
-        Toast.makeText(getActivity().getApplicationContext(), mCaption.getText().toString() , Toast.LENGTH_SHORT).show();
+        EditText location = (EditText)getActivity().findViewById(R.id.location_search);
+        post.setLocation(location.getText().toString());
 
-        //DEBUG
-        prefs.edit().putString("CAPTION", post.getCaption());
-        //END DEBUG
+        CheckBox commentAllow = (CheckBox) getActivity().findViewById(R.id.allow_checkbox);
+        post.setCommentsAllowed(commentAllow.isChecked());
+
+//        //DEBUG
+//        prefs.edit().putString("CAPTION", post.getCaption());
+//        //END DEBUG
 
         return post;
 
@@ -182,6 +215,10 @@ public class PictureCameraFragment extends Fragment implements PostUI {
         } else {
             pictureFrame.setVisibility(View.VISIBLE);
         }
+    }
+
+    private String searchLocation(CharSequence sequence) {
+        return sequence + "";
     }
 
 }

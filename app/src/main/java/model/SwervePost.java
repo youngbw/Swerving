@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by BrentYoung on 4/21/15.
@@ -14,18 +13,12 @@ public class SwervePost implements Serializable {
 
     private String id;
     private String userID;
-    private String fromLocation;
-    private String toLocation;
+    private String location;
     private String caption;
     private Date postedDate;
     private String imagePath;
     private boolean commentsAllowed;
-    private double swervePercentage;
-    private boolean isPublic;
-    private int swerves;
-    private int antiSwerves;
-    private List<String> usersCanSee;
-    private List<String> groupsCanSee;
+    private int swerveCount;
     private ArrayList<Comment> comments; //userID or name, comment string
 
 
@@ -42,18 +35,12 @@ public class SwervePost implements Serializable {
             userID = user.getUserID();
         }
 
-        usersCanSee = new ArrayList<>();
-        groupsCanSee = new ArrayList<>();
         comments = new ArrayList<>();
 
         caption = "None";
-        toLocation = "";
-        fromLocation = "";
+        location = "";
         postedDate = new Date();
-        swerves = 2;
-        antiSwerves = 1;
         imagePath = "";
-        isPublic = false;
         commentsAllowed = true;
     }
 
@@ -73,20 +60,9 @@ public class SwervePost implements Serializable {
         return userID;
     }
 
-    public String getFromLocation() {
-        return fromLocation;
-    }
 
-    public String getToLocation() {
-        return toLocation;
-    }
-
-    public List<String> getUsersCanSee() {
-        return usersCanSee;
-    }
-
-    public List<String> getGroupsCanSee() {
-        return groupsCanSee;
+    public String getLocation() {
+        return location;
     }
 
     public void setUserID(String userID) {
@@ -97,12 +73,8 @@ public class SwervePost implements Serializable {
         this.id = id;
     }
 
-    public void setFromLocation(String fromLocation) {
-        this.fromLocation = fromLocation;
-    }
-
-    public void setToLocation(String toLocation) {
-        this.toLocation = toLocation;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getCaption() {
@@ -114,7 +86,7 @@ public class SwervePost implements Serializable {
     }
 
     public double getSwervePercentage() {
-        return swervePercentage;
+        return swerveCount;
     }
 
     public ArrayList<Comment> getComments() {
@@ -125,8 +97,8 @@ public class SwervePost implements Serializable {
         this.comments = comments;
     }
 
-    public void setSwervePercentage(float swervePercentage) {
-        this.swervePercentage = swervePercentage;
+    public void setSwerveCount(int swerveCount) {
+        this.swerveCount = swerveCount;
     }
 
     public Date getPostedDate() {
@@ -147,32 +119,9 @@ public class SwervePost implements Serializable {
 
     /**
      * This method adds a new Swerve opinion to this swerve post.
-     * @param swerved whether or not the person thought this post should be swerved
      */
-    public void addOpinion(boolean swerved) {
-        if (swerved) {
-            swerves++;
-        } else {
-            antiSwerves++;
-        }
-
-        swervePercentage = (swerves / (swerves + antiSwerves)) * 100.00;
-    }
-
-    public void addUserPermission(String userID) {
-        if (!usersCanSee.contains(userID)) {
-            usersCanSee.add(userID);
-        }
-    }
-
-    public void addGroupPermission(String groupID) {
-        if (!groupsCanSee.contains(groupID)) {
-            groupsCanSee.add(groupID);
-        }
-    }
-
-    public void makePublic(boolean isPublic) {
-        this.isPublic = isPublic;
+    public void addSwerve() {
+        swerveCount++;
     }
 
     public void addComment(Comment comment) {

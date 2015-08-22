@@ -56,7 +56,7 @@ public class ChoosePublishFragment extends Fragment implements PostUI {
         if (getArguments() != null) {
             Toast.makeText(getActivity().getApplicationContext(), "IN ON CREATE FOR CHOOSE", Toast.LENGTH_SHORT).show();
             this.post = (SwervePost) getArguments().getSerializable(SWERVE_TAG);
-            this.post.makePublic(true); // TAKE THIS OUT AFTER DEBUG
+//            this.post.makePublic(true); // TAKE THIS OUT AFTER DEBUG
         }
     }
 
@@ -65,22 +65,6 @@ public class ChoosePublishFragment extends Fragment implements PostUI {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_choose_publish, container, false);
-    }
-
-    private void addUserPermissionToPost(String userID) {
-        post.addUserPermission(userID);
-    }
-
-    private void addGroupPermissionToPost(String groupID) {
-        post.addGroupPermission(groupID);
-    }
-
-    private void makePostPublic(boolean isPublic) {
-        post.makePublic(isPublic);
-    }
-
-    private void setLocation(String location) {
-        post.setToLocation(location);
     }
 
     @Override

@@ -7,22 +7,59 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="337dp"
         android:id="@+id/cameraSurface"
-        android:layout_margin="3dp"
-        android:layout_weight=".9">
+        android:layout_margin="3dp">
+
+        <ImageButton
+            android:id="@+id/take_picture_button"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:src="@drawable/ic_launcher"
+            style="@style/tabbedButtonTheme"
+            android:layout_margin="10dp"
+            android:background="@drawable/swerve_button_background"
+            android:layout_gravity="right|bottom"/>
     </FrameLayout>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/captionTextView"
-        android:layout_weight=".1"
-        android:hint="@string/commentPrompt"
-        android:gravity="top"
-        android:lines="3"
-        android:maxLines="3"
-        android:maxLength="250"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        style="@style/mainAppTheme"
+        android:weightSum="100">
+
+
+        <CheckBox
+            android:id="@+id/allow_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/activate_comments_string"
+            android:checked="true"
+            style="@style/textWidgetTheme"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:id="@+id/location_search"
+            style="@style/textWidgetTheme"
+            android:hint="@string/location_button_text"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/captionTextView"
+            android:hint="@string/commentPrompt"
+            android:gravity="top"
+            android:lines="3"
+            android:maxLines="3"
+            android:maxLength="250"
+            style="@style/textWidgetTheme"
+            />
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

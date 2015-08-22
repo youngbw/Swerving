@@ -4,7 +4,6 @@ package com.youngdesigns.swerve;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -100,35 +99,8 @@ public class PostActivity extends Activity {
 
     private void moveToNextStepSwerve() {
 
-        if (mNextButton.getText().toString().equals(FIRST_STEP)) {
-
-            mNextButton.setText(SECOND_STEP);
-
-            SwervePost post = this.fragment.composeSwerve();
-
-            Fragment chooseFragment = ChoosePublishFragment.newInstance(post);
-
-            moveToFragment(chooseFragment);
-
-
-        } else if (mNextButton.getText().toString().equals(SECOND_STEP)) {
-
-            mNextButton.setText(FIRST_STEP);
-
-            //DEBUG SO WE CAN SEE LAST POST
-
-            SwervePost post = this.fragment.composeSwerve();
-
-            Log.d("SWERVE POST NULL?", "" + post);
-
-            //END DEBUG
-            this.fragment.postNewSwerve(post);
-
-            Fragment fragment1 = PictureCameraFragment.newInstance();
-
-            moveToFragment(fragment1);
-
-        }
+        SwervePost post = fragment.composeSwerve();
+        fragment.postNewSwerve(post);
 
     }
 

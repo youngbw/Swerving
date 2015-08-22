@@ -63,8 +63,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/textWidgetTheme"
-                    android:hint="@string/phone_field_text"
-                    android:inputType="phone"
+                    android:hint="@string/email_text_field"
+                    android:inputType="textEmailAddress"
                     android:imeOptions="actionNext"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
