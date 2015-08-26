@@ -105,15 +105,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="right">
+                    style="@style/textWidgetTheme"
+                    android:padding="2dp"
+                    android:gravity="center_vertical">
+
+                    <CheckBox
+                        android:id="@+id/termsBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|start"
+                        android:textSize="12sp"
+                        android:layout_weight=".1"
+                        style="@style/loginButtonTheme"
+                        android:layout_margin="2dp"
+                        android:text="@string/terms_string"/>
 
                     <RadioGroup
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal"
                         style="@style/textWidgetTheme"
-                        android:padding="5dp"
-                        android:gravity="center">
+                        android:layout_margin="2dp"
+                        android:layout_gravity="center_vertical|end">
 
                         <RadioButton
                             android:id="@+id/male_radio_button"

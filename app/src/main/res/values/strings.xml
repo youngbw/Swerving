@@ -61,10 +61,15 @@
     <string name="password_text">Password</string>
     <string name="confirm_pw">Confirm Password</string>
     <string name="confirm_account">Confirm</string>
+    <string name="terms_string">Terms and Conditions</string>
 
-    <string name="hometown_help">The default location for your posts</string>
-    <string name="email_help">Please enter a valid email address ending in com or net after the period\nthis will be used to validate your account</string>
-    <string name="sec_question_help">Enter something that will be memorable.</string>
+    <string name="hometown_help">**Home Town: The default location for your posts</string>
+    <string name="email_help">**Email: Please enter a valid email address ending in com or net after the period (this will be used to validate your account)</string>
+    <string name="sec_question_help">**Security Question: Enter something that will be memorable a long time from now.</string>
+    <string name="username_help">**User Name: We suggest not using your real name, but keep it clean or we\'ll have to take not so drastic measures!</string>
+    <string name="password_help">**Password: This should contain a capitol letter, a number, and be at least 8 characters long.</string>
+    <string name="gender_help">Gender: This is not required but will result in happier times for those not wishing to view the secrets of the opposite sex.</string>
+    <string name="required_help">** = Required Field</string>
 
     <!-- Comment activity strings -->
     <string name="comment_hint">Thoughts?</string>

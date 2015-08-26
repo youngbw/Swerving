@@ -1,12 +1,14 @@
 package com.youngdesigns.swerve;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -27,6 +29,7 @@ public class RegisterActivity extends Activity {
     private Button confirmButton;
     private ImageView infoButton;
     private EditText hometownField;
+    private CheckBox termsBox;
 
 
     @Override
@@ -34,6 +37,12 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    public void showRegDialog() {
+        // Create an instance of the dialog fragment and show it
+        DialogFragment dialog = new RegInfoDialogFragment();
+        dialog.show(getFragmentManager(), "infolog");
     }
 
 
@@ -77,6 +86,21 @@ public class RegisterActivity extends Activity {
 
         confirmButton = (Button) findViewById(R.id.account_confirm_button);
         infoButton = (ImageView) findViewById(R.id.info_button);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                showRegDialog();
+            }
+        });
+
+        termsBox = (CheckBox) findViewById(R.id.termsBox);
+        termsBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO:show dialog with terms
+            }
+        });
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,24 +118,27 @@ public class RegisterActivity extends Activity {
 
         //TODO:Database check for userName uniqueness
 
-        if (emailField.getText().toString().contains("@") && (emailField.getText().toString().contains(".com") || emailField.getText().toString().contains(".net"))) {
+        if (termsBox.isChecked()) {
 
-            String pw = passWordField.getText().toString();
-            if (pw.equals(confirmPasswordField.getText().toString()) && pw.length() > 7) {
+            if (emailField.getText().toString().contains("@") && (emailField.getText().toString().contains(".com") || emailField.getText().toString().contains(".net"))) {
 
-                if (secQuestionField.getText().toString().length() != 0) {
+                String pw = passWordField.getText().toString();
+                if (pw.equals(confirmPasswordField.getText().toString()) && pw.length() > 7 && pw.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")) {
 
-                    if (answerField.getText().toString().length() != 0) {
+                    if (secQuestionField.getText().toString().length() != 0) {
 
-                        if (maleButton.isSelected() || femaleButton.isSelected()) {
+                        if (answerField.getText().toString().length() != 0) {
 
-                            isValid = true;
+                            if (maleButton.isSelected() || femaleButton.isSelected()) {
+
+                                isValid = true;
+                            }
+
                         }
 
                     }
 
                 }
-
             }
 
         }

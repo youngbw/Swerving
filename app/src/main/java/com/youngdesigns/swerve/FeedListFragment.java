@@ -19,6 +19,7 @@ import model.Comment;
 import model.Group;
 import model.SwerveLab;
 import model.SwervePost;
+import model.SwipeDetector;
 import model.User;
 
 /**
@@ -137,7 +138,7 @@ public class FeedListFragment extends android.app.ListFragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 //            return super.getView(position, convertView, parent);
-
+//            convertView = super.getView(position, convertView, parent);
             if (convertView == null) {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.fragment_feed_item_list, null);
             }
@@ -158,7 +159,7 @@ public class FeedListFragment extends android.app.ListFragment {
             TextView text = (TextView) convertView.findViewById(R.id.listTextView);
             text.setText(sp.getCaption());
 
-            TextView counter = (TextView) convertView.findViewById(R.id.swerve_count_text);
+            final TextView counter = (TextView) convertView.findViewById(R.id.swerve_count_text);
             counter.setText("SS " + sp.getSwerveCount());
             counter.setTextColor(Color.CYAN);
 
@@ -181,6 +182,7 @@ public class FeedListFragment extends android.app.ListFragment {
             DateFormat format = DateFormat.getDateTimeInstance();
             date.setText(format.format(sp.getPostedDate()));
 
+            convertView.setOnTouchListener(new SwipeDetector(counter, sp));
             return convertView;
 
         }
@@ -262,5 +264,4 @@ public class FeedListFragment extends android.app.ListFragment {
 
 
     }
-
 }

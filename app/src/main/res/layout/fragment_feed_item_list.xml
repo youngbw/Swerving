@@ -3,15 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.youngdesigns.swerve.FeedFragment"
     style="@style/mainAppTheme" android:orientation="vertical" android:weightSum="1.0"
-    android:padding="5dp">
+    android:padding="5dp" android:id="@+id/swerve_backing_layout">
 
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/listPictureView"
         android:layout_weight=".7"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/swerve_count_text"
@@ -20,9 +22,11 @@
         android:layout_weight=".05"
         android:gravity="left"
         android:textSize="18sp"
+        android:editable="false"
         style="@style/textWidgetTheme"
         android:background="#FFFFFF"
-        android:textColor="#91FFDA"/>
+        android:textColor="#91FFDA"
+        android:focusable="false"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -30,7 +34,7 @@
         android:id="@+id/listTextView"
         android:layout_weight=".2"
         android:editable="false"
-        android:enabled="false"/>
+        android:focusable="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"

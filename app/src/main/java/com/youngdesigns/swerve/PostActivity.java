@@ -101,6 +101,7 @@ public class PostActivity extends Activity {
 
         SwervePost post = fragment.composeSwerve();
         fragment.postNewSwerve(post);
+        finish();
 
     }
 
